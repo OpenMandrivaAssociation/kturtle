@@ -1,6 +1,6 @@
 Name: kturtle
 Summary: An educational programming environment
-Version: 4.7.80
+Version: 4.7.90
 Release: 1
 Group: Graphical desktop/KDE
 License: GPLv2 GFDL
