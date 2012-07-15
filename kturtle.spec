@@ -1,11 +1,11 @@
 Name: kturtle
 Summary: An educational programming environment
-Version: 4.8.4
+Version: 4.8.97
 Release: 1
 Group: Graphical desktop/KDE
 License: GPLv2 GFDL
 URL: http://edu.kde.org/kturtle
-Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/%name-%version.tar.xz
+Source: ftp://ftp.kde.org/pub/kde/unstable/%version/src/%name-%version.tar.xz
 BuildRequires: kdelibs4-devel >= 2:%{version}
 
 %description
