@@ -1,6 +1,6 @@
 Name:		kturtle
 Summary:	An educational programming environment
-Version:	4.11.4
+Version:	4.12.1
 Release:	1
 Group:		Graphical desktop/KDE
 License:	GPLv2 GFDL
@@ -36,6 +36,9 @@ and... programming.
 %makeinstall_std -C build
 
 %changelog
+* Tue Jan 14 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 4.12.1-1
+- New version 4.12.1
+
 * Wed Dec 04 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 4.11.4-1
 - New version 4.11.4
 
