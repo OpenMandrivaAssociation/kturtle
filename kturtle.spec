@@ -1,11 +1,11 @@
-Name:		kturtle
 Summary:	An educational programming environment
+Name:		kturtle
 Version:	4.14.1
 Release:	1
+License:	GPLv2+
 Group:		Graphical desktop/KDE
-License:	GPLv2 GFDL
-URL:		http://edu.kde.org/kturtle
-Source:		ftp://ftp.kde.org/pub/kde/stable/%{version}/src/%{name}-%{version}.tar.xz
+Url:		http://edu.kde.org/kturtle
+Source0:	ftp://ftp.kde.org/pub/kde/stable/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	kdelibs4-devel
 
 %description
@@ -16,14 +16,15 @@ and... programming.
 
 %files
 %doc AUTHORS COPYING COPYING.DOC FAQ
-%{_kde_bindir}/%{name}
-%{_kde_appsdir}/%{name}
-%{_kde_iconsdir}/hicolor/*/apps/%{name}.*
+%doc %{_kde_docdir}/HTML/*/%{name}
 %{_kde_applicationsdir}/%{name}.desktop
+%{_kde_appsdir}/%{name}
+%{_kde_bindir}/%{name}
 %{_kde_configdir}/%{name}.knsrc
-%{_kde_docdir}/HTML/*/%{name}
+%{_kde_datadir}/appdata/kturtle.appdata.xml
+%{_kde_iconsdir}/hicolor/*/apps/%{name}.*
 
-#----------------------------------------------------------------------
+#----------------------------------------------------------------------------
 
 %prep
 %setup -q
@@ -38,6 +39,7 @@ and... programming.
 %changelog
 * Mon Sep 29 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 4.14.1-1
 - New version 4.14.1
+- Update files
 
 * Tue Jul 15 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 4.13.3-1
 - New version 4.13.3
