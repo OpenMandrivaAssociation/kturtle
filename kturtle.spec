@@ -9,7 +9,7 @@ Source0:	http://download.kde.org/stable/applications/%{version}/src/%{name}-%{ve
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(KF5KIO)
 BuildRequires:	cmake(KF5NewStuff)
-BuildRequires:	cmake(KF5I18)
+BuildRequires:	cmake(KF5I18n)
 BuildRequires:	cmake(KF5KDELibs4Support)
 
 %description
