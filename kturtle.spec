@@ -22,11 +22,11 @@ and... programming.
 %doc AUTHORS COPYING COPYING.DOC FAQ
 %doc %{_docdir}/HTML/*/%{name}
 %{_datadir}/applications/org.kde.kturtle.desktop
-%{_datadir}/%{name}
 %{_bindir}/%{name}
 %{_sysconfdir}/xdg/%{name}.knsrc
 %{_datadir}/appdata/kturtle.appdata.xml
 %{_iconsdir}/hicolor/*/apps/%{name}.*
+%{_datadir}/kxmlgui5/kturtle/kturtleui.rc
 
 #----------------------------------------------------------------------------
 
