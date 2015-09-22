@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   kturtle-15.08.0.tar.xz: e0eaf0e5e175d8d590d14bfb6ecd89b22da8a01a
+sources:
+  kturtle-15.08.1.tar.xz: 54d505a87e5a5ea0198a296dac76669b63258b11
