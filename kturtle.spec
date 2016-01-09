@@ -24,7 +24,7 @@ and... programming.
 %{_datadir}/applications/org.kde.kturtle.desktop
 %{_bindir}/%{name}
 %{_sysconfdir}/xdg/%{name}.knsrc
-%{_datadir}/appdata/kturtle.appdata.xml
+%{_datadir}/appdata/org.kde.kturtle.appdata.xml
 %{_iconsdir}/hicolor/*/apps/%{name}.*
 %{_datadir}/kxmlgui5/kturtle/kturtleui.rc
 
