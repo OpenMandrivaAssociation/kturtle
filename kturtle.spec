@@ -1,6 +1,6 @@
 Summary:	An educational programming environment
 Name:		kturtle
-Version:	16.12.2
+Version:	17.04.0
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
@@ -18,15 +18,17 @@ KTurtle aims to make programming as easy and touchable as possible, and
 therefore can be used to teach kids the basics of math, geometry
 and... programming.
 
-%files
+%files -f %{name}.lang
 %doc AUTHORS COPYING COPYING.DOC FAQ
-%doc %{_docdir}/HTML/*/%{name}
 %{_datadir}/applications/org.kde.kturtle.desktop
 %{_bindir}/%{name}
 %{_sysconfdir}/xdg/%{name}.knsrc
-%{_datadir}/appdata/org.kde.kturtle.appdata.xml
+%{_datadir}/metainfo/org.kde.kturtle.appdata.xml
 %{_iconsdir}/hicolor/*/apps/%{name}.*
 %{_datadir}/kxmlgui5/kturtle/kturtleui.rc
+%dir %{_datadir}/kturtle
+%dir %{_datadir}/kturtle/examples
+%dir %{_datadir}/kturtle/data
 
 #----------------------------------------------------------------------------
 
@@ -39,3 +41,17 @@ and... programming.
 
 %install
 %ninja_install -C build
+%find_lang %{name} --with-html
+TOP="$(pwd)"
+cd %{buildroot}
+for i in .%{_datadir}/kturtle/examples/*; do
+	echo "%%lang($(echo $i |cut -d/ -f6)) $(echo $i |cut -b2-)" >>${TOP}/%{name}.lang
+done
+cd %{buildroot}%{_datadir}/katepart/syntax
+for i in logohighlightstyle.*.xml; do
+	echo "%%lang($(echo $i |cut -d. -f2)) %{_datadir}/katepart/syntax/$i" >>${TOP}/%{name}.lang
+done
+cd %{buildroot}%{_datadir}/kturtle/data
+for i in logokeywords.*.xml; do
+	echo "%%lang($(echo $i |cut -d. -f2)) %{_datadir}/kturtle/data/$i" >>${TOP}/%{name}.lang
+done
