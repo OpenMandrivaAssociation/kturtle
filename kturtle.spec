@@ -8,10 +8,18 @@ Group:		Graphical desktop/KDE
 Url:		http://edu.kde.org/kturtle
 Source0:	http://download.kde.org/%{stable}/applications/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	cmake(ECM)
+BuildRequires:	cmake(Qt5Core)
+BuildRequires:	cmake(Qt5Gui)
+BuildRequires:	cmake(Qt5Svg)
+BuildRequires:	cmake(Qt5Widgets)
+BuildRequires:	cmake(Qt5PrintSupport)
+BuildRequires:	cmake(KF5Crash)
 BuildRequires:	cmake(KF5KIO)
 BuildRequires:	cmake(KF5NewStuff)
+BuildRequires:	cmake(KF5DocTools)
+BuildRequires:	cmake(KF5TextWidgets)
 BuildRequires:	cmake(KF5I18n)
-BuildRequires:	cmake(KF5KDELibs4Support)
+BuildRequires:	cmake(KF5CoreAddons)
 
 %description
 KTurtle is an educational programming environment for the KDE Desktop.
