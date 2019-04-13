@@ -1,8 +1,8 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 70 ] && echo -n un; echo -n stable)
 Summary:	An educational programming environment
 Name:		kturtle
-Version:	 18.12.3
-Release:	2
+Version:	 19.04.0
+Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		http://edu.kde.org/kturtle
@@ -28,7 +28,7 @@ therefore can be used to teach kids the basics of math, geometry
 and... programming.
 
 %files -f %{name}.lang
-%doc AUTHORS COPYING COPYING.DOC FAQ
+%doc AUTHORS COPYING COPYING.DOC
 %{_datadir}/applications/org.kde.kturtle.desktop
 %{_bindir}/%{name}
 %{_sysconfdir}/xdg/%{name}.knsrc
