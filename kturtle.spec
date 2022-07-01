@@ -2,7 +2,7 @@
 Summary:	An educational programming environment
 Name:		kturtle
 Version:	22.04.1
-Release:	1
+Release:	2
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		http://edu.kde.org/kturtle
