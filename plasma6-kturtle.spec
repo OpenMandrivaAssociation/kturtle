@@ -21,6 +21,7 @@ BuildRequires:	cmake(KF6TextWidgets)
 BuildRequires:	cmake(KF6I18n)
 BuildRequires:	cmake(KF6CoreAddons)
 BuildRequires:	cmake(KF6XmlGui)
+BuildRequires:	cmake(Qt6Core5Compat)
 
 %description
 KTurtle is an educational programming environment for the KDE Desktop.
