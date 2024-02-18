@@ -1,12 +1,19 @@
+%define git 20240218
+%define gitbranch release/24.02
+%define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 70 ] && echo -n un; echo -n stable)
 Summary:	An educational programming environment
 Name:		plasma6-kturtle
-Version:	24.01.95
-Release:	1
+Version:	24.01.96
+Release:	%{?git:0.%{git}.}1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		http://edu.kde.org/kturtle
+%if 0%{?git:1}
+Source0:	https://invent.kde.org/education/kturtle/-/archive/%{gitbranch}/kturtle-%{gitbranchd}.tar.bz2#/kturtle-%{git}.tar.bz2
+%else
 Source0:	http://download.kde.org/%{stable}/release-service/%{version}/src/kturtle-%{version}.tar.xz
+%endif
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(Qt6Core)
 BuildRequires:	cmake(Qt6Gui)
@@ -40,7 +47,7 @@ and... programming.
 #----------------------------------------------------------------------------
 
 %prep
-%autosetup -p1 -n kturtle-%{?git:master}%{!?git:%{version}}
+%autosetup -p1 -n kturtle-%{?git:%{gitbranchd}}%{!?git:%{version}}
 %cmake \
 	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
 	-G Ninja
