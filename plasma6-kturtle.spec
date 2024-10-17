@@ -8,7 +8,7 @@ Version:	24.08.2
 Release:	%{?git:0.%{git}.}1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
-Url:		http://edu.kde.org/kturtle
+Url:		https://edu.kde.org/kturtle
 %if 0%{?git:1}
 Source0:	https://invent.kde.org/education/kturtle/-/archive/%{gitbranch}/kturtle-%{gitbranchd}.tar.bz2#/kturtle-%{git}.tar.bz2
 %else
