@@ -4,7 +4,7 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 70 ] && echo -n un; echo -n stable)
 Summary:	An educational programming environment
 Name:		kturtle
-Version:	25.04.0
+Version:	25.04.3
 Release:	%{?git:0.%{git}.}1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
@@ -31,30 +31,20 @@ BuildRequires:	cmake(KF6XmlGui)
 BuildRequires:	cmake(Qt6Core5Compat)
 BuildRequires:	cmake(Qt6SvgWidgets)
 
+%rename plasma6-kturtle
+
+BuildSystem:	cmake
+BuildOption:	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
+
 %description
 KTurtle is an educational programming environment for the KDE Desktop.
 KTurtle aims to make programming as easy and touchable as possible, and
 therefore can be used to teach kids the basics of math, geometry
 and... programming.
 
-%files -f kturtle.lang
+%files -f %{name}.lang
 %{_datadir}/applications/org.kde.kturtle.desktop
 %{_bindir}/kturtle
 %{_datadir}/metainfo/org.kde.kturtle.appdata.xml
 %{_iconsdir}/hicolor/*/apps/kturtle.*
 %{_datadir}/knsrcfiles/kturtle.knsrc
-
-#----------------------------------------------------------------------------
-
-%prep
-%autosetup -p1 -n kturtle-%{?git:%{gitbranchd}}%{!?git:%{version}}
-%cmake \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
-	-G Ninja
-
-%build
-%ninja -C build
-
-%install
-%ninja_install -C build
-%find_lang kturtle --with-html
